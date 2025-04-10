@@ -496,10 +496,203 @@
     font-weight: 500;
 }
 
+/* LocationReviewsStack specific styles */
+.lr-location-reviews-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--lr-spacing-xl);
+}
+
+.lr-location-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--lr-spacing-lg);
+    background-color: var(--lr-bg-white);
+    border-radius: var(--lr-radius-lg);
+    box-shadow: var(--lr-shadow-md);
+    padding: var(--lr-spacing-xl);
+    overflow: hidden;
+}
+
+.lr-location-header {
+    display: flex;
+    gap: var(--lr-spacing-xl);
+}
+
+.lr-location-image {
+    width: 120px;
+    height: 120px;
+    border-radius: var(--lr-radius-md);
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.lr-location-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--lr-spacing-sm);
+}
+
+.lr-location-name {
+    font-size: var(--lr-text-2xl);
+    font-weight: bold;
+    color: var(--lr-text-dark);
+    margin: 0;
+}
+
+.lr-location-address {
+    color: var(--lr-text-medium);
+    font-size: var(--lr-text-base);
+}
+
+.lr-location-contact {
+    display: flex;
+    gap: var(--lr-spacing-md);
+    margin-top: var(--lr-spacing-sm);
+}
+
+.lr-location-phone,
+.lr-location-website {
+    color: var(--lr-primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--lr-transition-fast);
+}
+
+.lr-location-phone:hover,
+.lr-location-website:hover {
+    color: var(--lr-primary-dark);
+    text-decoration: underline;
+}
+
+.lr-location-description {
+    color: var(--lr-text-medium);
+    line-height: 1.6;
+}
+
+.lr-reviews-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--lr-spacing-lg);
+}
+
+.lr-reviews-heading {
+    font-size: var(--lr-text-xl);
+    font-weight: bold;
+    color: var(--lr-text-dark);
+    margin: 0;
+}
+
+.lr-reviews-summary-compact {
+    display: flex;
+    align-items: center;
+    gap: var(--lr-spacing-md);
+}
+
+.lr-average-text {
+    color: var(--lr-text-medium);
+    font-size: var(--lr-text-base);
+}
+
+.lr-average-text .lr-average-number {
+    font-weight: bold;
+    color: var(--lr-text-dark);
+    font-size: var(--lr-text-lg);
+}
+
+.lr-average-text .lr-total-reviews {
+    font-size: var(--lr-text-sm);
+    color: var(--lr-text-light);
+    margin-left: var(--lr-spacing-xs);
+}
+
+.lr-reviews-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--lr-spacing-lg);
+}
+
+.lr-detailed-review-card {
+    background-color: var(--lr-bg-white);
+    border-radius: var(--lr-radius-lg);
+    box-shadow: var(--lr-shadow-md);
+    padding: var(--lr-spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--lr-spacing-md);
+    border-left: 4px solid var(--lr-primary-color);
+}
+
+.lr-review-title {
+    font-size: var(--lr-text-lg);
+    font-weight: bold;
+    color: var(--lr-text-dark);
+    margin-top: var(--lr-spacing-xs);
+}
+
+.lr-verified-badge {
+    display: inline-block;
+    margin-left: var(--lr-spacing-sm);
+    padding: var(--lr-spacing-xs) var(--lr-spacing-sm);
+    background-color: var(--lr-success-bg);
+    color: var(--lr-success-text);
+    border-radius: var(--lr-radius-full);
+    font-size: var(--lr-text-xs);
+    font-weight: 500;
+}
+
+.lr-see-all-link {
+    display: inline-block;
+    color: var(--lr-primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: var(--lr-spacing-md);
+    text-align: center;
+    transition: color var(--lr-transition-fast);
+}
+
+.lr-see-all-link:hover {
+    color: var(--lr-primary-dark);
+    text-decoration: underline;
+}
+
+.lr-loading,
+.lr-error {
+    padding: var(--lr-spacing-xl);
+    text-align: center;
+    background-color: var(--lr-bg-white);
+    border-radius: var(--lr-radius-lg);
+    box-shadow: var(--lr-shadow-md);
+}
+
+.lr-loading {
+    color: var(--lr-text-medium);
+}
+
+.lr-error {
+    color: var(--lr-error-text);
+    background-color: var(--lr-error-bg);
+    border: 1px solid var(--lr-error-border);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .lr-review-card {
+    .lr-review-card,
+    .lr-detailed-review-card,
+    .lr-location-info {
         padding: var(--lr-spacing-lg);
+    }
+
+    .lr-location-header {
+        flex-direction: column;
+        gap: var(--lr-spacing-lg);
+    }
+
+    .lr-location-image {
+        width: 100%;
+        height: 180px;
     }
 
     .lr-review-card-header {
