@@ -3,35 +3,79 @@
     {
       "id": "nyc",
       "name": "New York City",
-      "address": "123 Broadway, New York, NY 10001",
-      "phone": "(212) 555-1234",
-      "website": "https://example.com/nyc",
+      "address": "308 Fifth Avenue, Fifth Floor, New York, NY 10001, United States",
+      "phone": "(646) 503-1209",
+      "website": "https://www.maximhairrestoration.com/locations/new-york-city/",
       "rating": 4.8,
       "total_reviews": 156,
       "image": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      "description": "Our New York City location offers state-of-the-art facilities and a team of experienced professionals dedicated to providing exceptional service.",
+      "description": "Affordable, Turkish-style hair transplants upto 5,000 grafts and non-surgical hair restoration in New York, NY. Body to scalp, No Shave FUE, Beard and Eyebrow transplants. 0% easy payment plans.",
       "doctors": [
         {
-          "id": "dr-smith",
-          "name": "Dr. James Smith",
-          "title": "Medical Director",
-          "specialty": "Hair Transplant Specialist",
-          "experience": "15+ years",
-          "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-          "bio": "Dr. Smith is a board-certified specialist with over 15 years of experience in hair restoration. He has performed more than 3,000 successful procedures and is known for his meticulous attention to detail and natural-looking results.",
-          "credentials": ["Board Certified", "American Board of Hair Restoration Surgery", "International Society of Hair Restoration Surgery"],
-          "link": "https://example.com/nyc/dr-smith"
+          "id": "dr-barnard",
+          "name": "Dr. Lawrence Barnard",
+          "title": "Board-Certified Hair Transplant Specialist",
+          "specialty": "Hair Transplantation",
+          "experience": "Nearly a decade",
+          "image": "https://www.maximhairrestoration.com/wp-content/uploads/2024/03/Mask-group20.jpg",
+          "bio": "Dr. Lawrence Barnard is a Board-Certified hair transplant specialist with nearly a decade of hair restoration experience in NYC and Long Island. His expertise encompasses proficiency in FUT (Follicular Unit Transplantation) and FUE techniques, pioneering cellular micrografting procedures, leadership in a residency program at Southampton Hospital, affiliated with St. Barnabas Hospital, and recognition with the NYIT President's Service Award for contributions to medicine.",
+          "credentials": ["Board Certified", "FUT and FUE Specialist", "Cellular Micrografting Pioneer"],
+          "link": "https://www.maximhairrestoration.com/our-doctors/dr-barnard/"
         },
         {
-          "id": "dr-johnson",
-          "name": "Dr. Emily Johnson",
-          "title": "Senior Surgeon",
-          "specialty": "Hair Restoration Expert",
-          "experience": "12+ years",
-          "image": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-          "bio": "Dr. Johnson specializes in advanced hair restoration techniques. With a background in dermatology and plastic surgery, she brings a unique perspective to hair restoration, focusing on both aesthetic outcomes and scalp health.",
-          "credentials": ["Board Certified", "American Academy of Dermatology", "American Society of Plastic Surgeons"],
-          "link": "https://example.com/nyc/dr-johnson"
+          "id": "dr-stoller",
+          "name": "Dr. Roy Stoller",
+          "title": "Board-Certified Hair Transplant Surgeon",
+          "specialty": "FUE and FUT Hair Transplants",
+          "experience": "25+ years",
+          "image": "https://www.maximhairrestoration.com/wp-content/uploads/2025/03/TheresaLu_MAXIM_Headshot23.png",
+          "bio": "Dr. Stoller has over 25 years of FUE and FUT hair transplant experience. He is Board Certified and rated among the Top 1% of hair transplant doctors. He is a Member of ISHRS and a Fellow of the American Academy of Surgery. He has won awards for his work and is a hands-on surgeon.",
+          "credentials": ["Board Certified", "Member of ISHRS", "Fellow of the American Academy of Surgery", "Top 1% of Hair Transplant Doctors"],
+          "link": "https://www.maximhairrestoration.com/our-doctors/dr-roy-b-stoller/"
+        },
+        {
+          "id": "rhonda-daniels",
+          "name": "Rhonda Daniels, PA-C",
+          "title": "Physician Associate",
+          "specialty": "FUE Hair Transplant and Hybrid Hair Restoration",
+          "experience": "10+ years",
+          "image": "https://www.maximhairrestoration.com/wp-content/uploads/2024/03/Mask-group23.jpg",
+          "bio": "With 10 years of dedicated hair transplant experience, Rhonda Daniels brings a wealth of knowledge to MAXIM. She has a strong foundation in neurosurgical procedures, is a former specialist at Bosley Hair Transplant, trained under renowned hair transplant surgeons, and completed comprehensive 360 Hair Transplant Fellowship. She has hands-on expertise in various FUE systems including ARTAS, ATERA, WAW, Ellis, S.A.F.E., MAMBA, and Cole, and specializes in FUE Hair Transplant and Hybrid Hair Restoration Procedures.",
+          "credentials": ["PA-C", "360 Hair Transplant Fellowship", "FUE Systems Expert"],
+          "link": "https://www.maximhairrestoration.com/our-doctors/rhonda-daniels-pa-c/"
+        },
+        {
+          "id": "marcelo-acosta",
+          "name": "Marcelo Acosta, PA-C",
+          "title": "Physician Associate",
+          "specialty": "Hair Transplantation",
+          "experience": "20+ years medical, 10+ years surgery",
+          "image": "https://www.maximhairrestoration.com/wp-content/uploads/2023/09/Mask-group31.jpg",
+          "bio": "Marcelo Acosta is a seasoned clinician with over two decades of medical experience. He has 10+ years specializing in outpatient ambulatory surgery, trained at MAXIM under our esteemed Clinical Director, and is known for providing impeccable care and unparalleled expertise. He is qualified in aesthetic medicine and hair transplants, experienced in H&P imaging, and is a bilingual provider, enhancing patient communication.",
+          "credentials": ["PA-C", "Aesthetic Medicine Specialist", "Bilingual Provider"],
+          "link": "https://www.maximhairrestoration.com/our-doctors/marcelo-acosta/"
+        },
+        {
+          "id": "theresa-lu",
+          "name": "Theresa Lu, PA-C",
+          "title": "Board-Certified Physician's Associate",
+          "specialty": "FUE Hair Transplants",
+          "experience": "Extensive",
+          "image": "https://www.maximhairrestoration.com/wp-content/uploads/2023/10/TheresaLu_MAXIM_Headshot3.jpg",
+          "bio": "Theresa Lu is a Board-Certified Physician's Associate with a diverse skill set. She is trained and certified in FUE hair transplants by MAXIM's Clinical Director, has a strong background in dermatology, skin care, and aesthetics, and is a hands-on clinician performing all aspects of hair transplant procedures. She has expertise in local anesthesia, harvesting, and site-making, and is renowned for her excellent and calming bedside manner.",
+          "credentials": ["Board-Certified PA-C", "FUE Certified", "Dermatology Background"],
+          "link": "https://www.maximhairrestoration.com/our-doctors/theresa-lu/"
+        },
+        {
+          "id": "ronald-jeganathan",
+          "name": "Clinician Ronald Jeganathan, PA-C",
+          "title": "Hair Restoration Specialist",
+          "specialty": "Mega Session FUE Hair Transplants",
+          "experience": "Extensive",
+          "image": "https://www.maximhairrestoration.com/wp-content/uploads/2025/03/Mask-group2546.jpg",
+          "bio": "Clinician Jeganathan is a Hair Restoration Specialist with a deep personal connection to the field, having experienced Alopecia from a young age. He practices in the NYC, Long Island and NJ locations of maxim hair restoration, specializing in mega session FUE hair transplants up to 5,000 grafts, regenerative cellular therapy, autologous conditioned plasma (ACP) and non-surgical hair restoration procedures.",
+          "credentials": ["PA-C", "FUE Specialist", "Regenerative Therapy Expert"],
+          "link": "https://www.maximhairrestoration.com/our-doctors/clinician-ronald-jeganathan/"
         }
       ],
       "reviews": [
@@ -45,7 +89,7 @@
           "avatar": "",
           "verified": true,
           "link": "https://example.com/reviews/nyc/1",
-          "doctor": "dr-smith"
+          "doctor": "dr-barnard"
         },
         {
           "id": 2,
@@ -57,7 +101,7 @@
           "avatar": "",
           "verified": true,
           "link": "https://example.com/reviews/nyc/2",
-          "doctor": "dr-johnson"
+          "doctor": "dr-stoller"
         },
         {
           "id": 3,
@@ -69,7 +113,7 @@
           "avatar": "",
           "verified": true,
           "link": "https://example.com/reviews/nyc/3",
-          "doctor": "dr-smith"
+          "doctor": "rhonda-daniels"
         }
       ]
     },

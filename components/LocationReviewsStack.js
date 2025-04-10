@@ -30,18 +30,53 @@
 window.LRComponents = window.LRComponents || {};
 
 // Sample data for local testing
-const sampleLocationData = {
+window.LRComponents.sampleLocationData = {
     "locations": [
         {
             "id": "nyc",
             "name": "New York City",
-            "address": "123 Broadway, New York, NY 10001",
-            "phone": "(212) 555-1234",
-            "website": "https://example.com/nyc",
+            "address": "308 Fifth Avenue, Fifth Floor, New York, NY 10001, United States",
+            "phone": "(646) 503-1209",
+            "website": "https://www.maximhairrestoration.com/locations/new-york-city/",
             "rating": 4.8,
             "total_reviews": 156,
             "image": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-            "description": "Our New York City location offers state-of-the-art facilities and a team of experienced professionals dedicated to providing exceptional service.",
+            "description": "Affordable, Turkish-style hair transplants upto 5,000 grafts and non-surgical hair restoration in New York, NY. Body to scalp, No Shave FUE, Beard and Eyebrow transplants. 0% easy payment plans.",
+            "doctors": [
+                {
+                    "id": "dr-barnard",
+                    "name": "Dr. Lawrence Barnard",
+                    "title": "Board-Certified Hair Transplant Specialist",
+                    "specialty": "Hair Transplantation",
+                    "experience": "Nearly a decade",
+                    "image": "https://www.maximhairrestoration.com/wp-content/uploads/2024/03/Mask-group20.jpg",
+                    "bio": "Dr. Lawrence Barnard is a Board-Certified hair transplant specialist with nearly a decade of hair restoration experience in NYC and Long Island. His expertise encompasses proficiency in FUT (Follicular Unit Transplantation) and FUE techniques, pioneering cellular micrografting procedures, leadership in a residency program at Southampton Hospital, affiliated with St. Barnabas Hospital, and recognition with the NYIT President's Service Award for contributions to medicine.",
+                    "credentials": ["Board Certified", "FUT and FUE Specialist", "Cellular Micrografting Pioneer"],
+                    "link": "https://www.maximhairrestoration.com/our-doctors/dr-barnard/"
+                },
+                {
+                    "id": "dr-stoller",
+                    "name": "Dr. Roy Stoller",
+                    "title": "Board-Certified Hair Transplant Surgeon",
+                    "specialty": "FUE and FUT Hair Transplants",
+                    "experience": "25+ years",
+                    "image": "https://www.maximhairrestoration.com/wp-content/uploads/2025/03/TheresaLu_MAXIM_Headshot23.png",
+                    "bio": "Dr. Stoller has over 25 years of FUE and FUT hair transplant experience. He is Board Certified and rated among the Top 1% of hair transplant doctors. He is a Member of ISHRS and a Fellow of the American Academy of Surgery. He has won awards for his work and is a hands-on surgeon.",
+                    "credentials": ["Board Certified", "Member of ISHRS", "Fellow of the American Academy of Surgery", "Top 1% of Hair Transplant Doctors"],
+                    "link": "https://www.maximhairrestoration.com/our-doctors/dr-roy-b-stoller/"
+                },
+                {
+                    "id": "rhonda-daniels",
+                    "name": "Rhonda Daniels, PA-C",
+                    "title": "Physician Associate",
+                    "specialty": "FUE Hair Transplant and Hybrid Hair Restoration",
+                    "experience": "10+ years",
+                    "image": "https://www.maximhairrestoration.com/wp-content/uploads/2024/03/Mask-group23.jpg",
+                    "bio": "With 10 years of dedicated hair transplant experience, Rhonda Daniels brings a wealth of knowledge to MAXIM. She has a strong foundation in neurosurgical procedures, is a former specialist at Bosley Hair Transplant, trained under renowned hair transplant surgeons, and completed comprehensive 360 Hair Transplant Fellowship.",
+                    "credentials": ["PA-C", "360 Hair Transplant Fellowship", "FUE Systems Expert"],
+                    "link": "https://www.maximhairrestoration.com/our-doctors/rhonda-daniels-pa-c/"
+                }
+            ],
             "reviews": [
                 {
                     "id": 1,
@@ -51,7 +86,9 @@ const sampleLocationData = {
                     "title": "Exceptional Service and Results",
                     "content": "I had an amazing experience at the New York location. The staff was incredibly professional and made me feel comfortable throughout the entire process. The results exceeded my expectations, and I couldn't be happier with my decision to choose this clinic. The facility was clean and modern, and the follow-up care was excellent.",
                     "avatar": "",
-                    "verified": true
+                    "verified": true,
+                    "link": "https://example.com/reviews/nyc/1",
+                    "doctor": "dr-barnard"
                 },
                 {
                     "id": 2,
@@ -61,7 +98,9 @@ const sampleLocationData = {
                     "title": "Great Experience Overall",
                     "content": "Very satisfied with my experience at the NYC location. The procedure was quick and the results were better than expected. The only reason I'm not giving 5 stars is because the waiting time was a bit longer than I anticipated. However, the staff was friendly and professional, and they made sure I was comfortable throughout the process.",
                     "avatar": "",
-                    "verified": true
+                    "verified": true,
+                    "link": "https://example.com/reviews/nyc/2",
+                    "doctor": "dr-stoller"
                 },
                 {
                     "id": 3,
@@ -71,7 +110,9 @@ const sampleLocationData = {
                     "title": "Highly Recommend",
                     "content": "I had a great experience at this location. The staff was friendly and the results were amazing. The consultation was thorough and they answered all my questions. The procedure itself was much less uncomfortable than I expected, and the recovery was smooth. I've already recommended them to several friends.",
                     "avatar": "",
-                    "verified": true
+                    "verified": true,
+                    "link": "https://example.com/reviews/nyc/3",
+                    "doctor": "rhonda-daniels"
                 }
             ]
         },
@@ -231,7 +272,7 @@ window.LRComponents.LocationReviewsStack = function() {
         // For local testing with file:// protocol, use the embedded data
         if (window.location.protocol === 'file:' || dataUrl.startsWith('file://')) {
             console.log('Using embedded data for local testing');
-            return sampleLocationData.locations.find(location => location.id === locationId);
+            return window.LRComponents.sampleLocationData.locations.find(location => location.id === locationId);
         }
 
         // For remote testing, fetch from the URL
@@ -249,7 +290,7 @@ window.LRComponents.LocationReviewsStack = function() {
             console.error('Error fetching location data:', error);
             // Fallback to embedded data if fetch fails
             console.log('Falling back to embedded data');
-            return sampleLocationData.locations.find(location => location.id === locationId);
+            return window.LRComponents.sampleLocationData.locations.find(location => location.id === locationId);
         }
     }
 
