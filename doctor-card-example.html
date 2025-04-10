@@ -128,7 +128,7 @@
             <div id="component-container" class="location-reviews-stack-container"
                 data-location-id="nyc"
                 data-show-location-info="true"
-                data-max-reviews="10"
+                data-max-reviews="0"
                 data-doctor-id="dr-barnard"
                 data-show-doctor-card="true"
                 data-animation="fade">
@@ -139,9 +139,55 @@
     <script src="components/LocationReviewsStack.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Add more reviews to the sample data for scrolling demonstration
+            const addExtraReviews = () => {
+                if (!window.LRComponents || !window.LRComponents.sampleLocationData) return;
+
+                const nycLocation = window.LRComponents.sampleLocationData.locations.find(loc => loc.id === 'nyc');
+                if (!nycLocation) return;
+
+                // Clone existing reviews to create more
+                const existingReviews = [...nycLocation.reviews];
+                const extraReviews = [];
+
+                // Create 15 more reviews by cloning and modifying existing ones
+                for (let i = 0; i < 15; i++) {
+                    const originalReview = existingReviews[i % existingReviews.length];
+                    const clonedReview = {...originalReview};
+
+                    // Modify the cloned review to make it unique
+                    clonedReview.id = originalReview.id + 100 + i;
+                    clonedReview.date = new Date(new Date(originalReview.date).getTime() - (i * 86400000)).toISOString().split('T')[0]; // Subtract days
+                    clonedReview.title = `${originalReview.title} - Example ${i+1}`;
+
+                    // Assign to a random doctor
+                    const doctors = nycLocation.doctors;
+                    clonedReview.doctor = doctors[Math.floor(Math.random() * doctors.length)].id;
+
+                    extraReviews.push(clonedReview);
+                }
+
+                // Add the extra reviews
+                nycLocation.reviews = [...nycLocation.reviews, ...extraReviews];
+
+                // Add a notice about the extra reviews
+                setTimeout(() => {
+                    const reviewsContainer = document.querySelector('.lr-reviews-list');
+                    if (reviewsContainer) {
+                        const notice = document.createElement('div');
+                        notice.className = 'extra-reviews-notice';
+                        notice.textContent = 'Extra reviews added for scrolling demonstration';
+                        reviewsContainer.appendChild(notice);
+                    }
+                }, 1000);
+            };
+
             // Initialize the component
             if (typeof window.LRComponents !== 'undefined' &&
                 typeof window.LRComponents.LocationReviewsStack === 'function') {
+                // Add extra reviews first
+                addExtraReviews();
+                // Then initialize the component
                 window.LRComponents.LocationReviewsStack();
             }
 
@@ -184,6 +230,8 @@
                     // Update component
                     componentContainer.dataset.doctorId = this.dataset.doctorId;
                     componentContainer.innerHTML = '<div class="lr-loading">Loading doctor information...</div>';
+                    // Add extra reviews again before reinitializing
+                    addExtraReviews();
                     window.LRComponents.LocationReviewsStack();
                 });
 
