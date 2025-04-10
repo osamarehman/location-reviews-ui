@@ -174,27 +174,27 @@
                 console.log(`Added ${extraReviews.length} extra reviews. Total reviews: ${nycLocation.reviews.length}`);
 
                 // Add a notice about the extra reviews
-                setTimeout(() => {
-                    // Add notice to the reviews list
-                    const reviewsContainer = document.querySelector('.lr-reviews-list');
-                    if (reviewsContainer) {
-                        const notice = document.createElement('div');
-                        notice.className = 'extra-reviews-notice';
-                        notice.textContent = `Extra reviews added for scrolling demonstration (${extraReviews.length} reviews added)`;
-                        reviewsContainer.appendChild(notice);
-                    }
+            //     setTimeout(() => {
+            //         // Add notice to the reviews list
+            //         const reviewsContainer = document.querySelector('.lr-reviews-list');
+            //         if (reviewsContainer) {
+            //             const notice = document.createElement('div');
+            //             notice.className = 'extra-reviews-notice';
+            //             notice.textContent = `Extra reviews added for scrolling demonstration (${extraReviews.length} reviews added)`;
+            //             reviewsContainer.appendChild(notice);
+            //         }
 
-                    // Also add a notice at the top of the page
-                    const exampleSection = document.querySelector('.example-section');
-                    if (exampleSection) {
-                        const topNotice = document.createElement('div');
-                        topNotice.className = 'extra-reviews-notice';
-                        topNotice.style.marginBottom = '1rem';
-                        topNotice.textContent = `${extraReviews.length} extra reviews added for scrolling demonstration. Total: ${nycLocation.reviews.length} reviews`;
-                        exampleSection.insertBefore(topNotice, document.querySelector('.doctor-selector'));
-                    }
-                }, 1000);
-            };
+            //         // Also add a notice at the top of the page
+            //         const exampleSection = document.querySelector('.example-section');
+            //         if (exampleSection) {
+            //             const topNotice = document.createElement('div');
+            //             topNotice.className = 'extra-reviews-notice';
+            //             topNotice.style.marginBottom = '1rem';
+            //             topNotice.textContent = `${extraReviews.length} extra reviews added for scrolling demonstration. Total: ${nycLocation.reviews.length} reviews`;
+            //             exampleSection.insertBefore(topNotice, document.querySelector('.doctor-selector'));
+            //         }
+            //     }, 1000);
+            // };
 
             // Initialize the component
             if (typeof window.LRComponents !== 'undefined' &&
