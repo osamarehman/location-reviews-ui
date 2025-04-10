@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAXIM Hair Restoration - WordPress Integration Example</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/maxim-theme.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            color: var(--lr-text-medium);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: var(--lr-bg-light);
+        }
+        
+        h1, h2, h3 {
+            color: var(--lr-text-dark);
+        }
+        
+        .header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            color: var(--lr-primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            font-size: 1.125rem;
+            color: var(--lr-text-medium);
+        }
+        
+        .note {
+            background-color: var(--lr-success-bg);
+            color: var(--lr-success-text);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--lr-success-border);
+        }
+        
+        .note h3 {
+            color: var(--lr-success-text);
+            margin-top: 0;
+        }
+        
+        .footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--lr-border-light);
+            text-align: center;
+            color: var(--lr-text-light);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>MAXIM Hair Restoration</h1>
+        <p>WordPress Integration Example - SEO-Friendly Doctor Reviews</p>
+    </div>
+    
+    <div class="note">
+        <h3>SEO-Friendly Implementation</h3>
+        <p>This example demonstrates how the doctor card and reviews components can be integrated into WordPress with preloaded data for SEO purposes. All content is rendered server-side and available to search engines without relying on client-side JavaScript for content rendering.</p>
+    </div>
+    
+    <!-- This is where the shortcode would be placed in WordPress: [maxim_doctor_reviews] -->
+    <div class="maxim-doctor-reviews-container">
+        <h2 class="maxim-section-title">Our Doctors</h2>
+        <p class="maxim-section-description">Click on a doctor to see their profile and reviews.</p>
+        
+        <div class="doctor-selector" id="doctor-selector">
+            <button class="doctor-button active" data-doctor-id="dr-barnard">
+                <img src="https://www.maximhairrestoration.com/wp-content/uploads/2024/03/Mask-group20.jpg" alt="Dr. Lawrence Barnard">
+                <span>Dr. Lawrence Barnard</span>
+            </button>
+            <button class="doctor-button" data-doctor-id="dr-stoller">
+                <img src="https://www.maximhairrestoration.com/wp-content/uploads/2024/03/Mask-group-1.jpg" alt="Dr. Roy B. Stoller">
+                <span>Dr. Roy B. Stoller</span>
+            </button>
+            <button class="doctor-button" data-doctor-id="rhonda-daniels">
+                <img src="https://www.maximhairrestoration.com/wp-content/uploads/2024/03/Mask-group-2.jpg" alt="Rhonda Daniels, PA-C">
+                <span>Rhonda Daniels, PA-C</span>
+            </button>
+            <button class="doctor-button" data-doctor-id="marcelo-acosta">
+                <img src="https://www.maximhairrestoration.com/wp-content/uploads/2024/03/Mask-group-3.jpg" alt="Marcelo Acosta, PA-C">
+                <span>Marcelo Acosta, PA-C</span>
+            </button>
+            <button class="doctor-button" data-doctor-id="theresa-lu">
+                <img src="https://www.maximhairrestoration.com/wp-content/uploads/2024/03/Mask-group-4.jpg" alt="Theresa Lu, PA-C">
+                <span>Theresa Lu, PA-C</span>
+            </button>
+            <button class="doctor-button" data-doctor-id="ronald-jeganathan">
+                <img src="https://www.maximhairrestoration.com/wp-content/uploads/2024/03/Mask-group-5.jpg" alt="Ronald Jeganathan, PA-C">
+                <span>Ronald Jeganathan, PA-C</span>
+            </button>
+        </div>
+        
+        <div class="maxim-scroll-container">
+            <div id="maxim-doctor-reviews" data-location-id="nyc" data-doctor-id="dr-barnard">
+                <!-- Doctor Card and Reviews -->
+                <div class="lr-location-reviews-stack">
+                    <div class="lr-layout-with-doctor">
+                        <!-- Doctor Card (Left Side) -->
+                        <div class="lr-doctor-card">
+                            <div class="lr-doctor-image-container">
+                                <img class="lr-doctor-image" src="https://www.maximhairrestoration.com/wp-content/uploads/2024/03/Mask-group20.jpg" alt="Dr. Lawrence Barnard">
+                            </div>
+                            <div class="lr-doctor-info">
+                                <h3 class="lr-doctor-name">Dr. Lawrence Barnard</h3>
+                                <div class="lr-doctor-title">Board-Certified Hair Transplant Specialist</div>
+                                <div class="lr-doctor-specialty">Hair Transplantation</div>
+                                <div class="lr-doctor-experience">Experience: Nearly a decade</div>
+                                <div class="lr-doctor-bio">Dr. Lawrence Barnard is a Board-Certified hair transplant specialist with nearly a decade of hair restoration experience in NYC and Long Island.</div>
+                                <div class="lr-doctor-link-container">
+                                    <a href="https://www.maximhairrestoration.com/our-doctors/dr-barnard/" class="lr-doctor-link">View Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Reviews (Right Side) -->
+                        <div class="lr-layout-reviews-only">
+                            <div class="lr-reviews-list">
+                                <!-- Review 1 -->
+                                <div class="lr-detailed-review-card">
+                                    <div class="lr-review-card-header">
+                                        <div class="lr-review-avatar">JS</div>
+                                        <div class="lr-reviewer-info">
+                                            <div class="lr-reviewer-name">John Smith<span class="lr-verified-badge">Verified</span></div>
+                                            <div class="lr-review-date">May 15, 2023</div>
+                                        </div>
+                                        <div class="lr-review-rating">
+                                            <span class="lr-star-filled">★</span>
+                                            <span class="lr-star-filled">★</span>
+                                            <span class="lr-star-filled">★</span>
+                                            <span class="lr-star-filled">★</span>
+                                            <span class="lr-star-filled">★</span>
+                                        </div>
+                                    </div>
+                                    <div class="lr-review-title">Exceptional Service</div>
+                                    <div class="lr-review-content">I had an amazing experience at the NYC location. The staff was incredibly professional and made me feel comfortable throughout the entire process. The results exceeded my expectations, and I've already recommended them to several friends.</div>
+                                </div>
+                                
+                                <!-- Review 2 -->
+                                <div class="lr-detailed-review-card">
+                                    <div class="lr-review-card-header">
+                                        <div class="lr-review-avatar">MB</div>
+                                        <div class="lr-reviewer-info">
+                                            <div class="lr-reviewer-name">Michael Brown<span class="lr-verified-badge">Verified</span></div>
+                                            <div class="lr-review-date">March 10, 2023</div>
+                                        </div>
+                                        <div class="lr-review-rating">
+                                            <span class="lr-star-filled">★</span>
+                                            <span class="lr-star-filled">★</span>
+                                            <span class="lr-star-filled">★</span>
+                                            <span class="lr-star-filled">★</span>
+                                            <span class="lr-star-filled">★</span>
+                                        </div>
+                                    </div>
+                                    <div class="lr-review-title">Highly Recommend</div>
+                                    <div class="lr-review-content">I had a great experience at this location. The staff was friendly and the results were amazing. The consultation was thorough and they answered all my questions. The procedure itself was much less uncomfortable than I expected, and the recovery was smooth. I've already recommended them to several friends.</div>
+                                </div>
+                                
+                                <!-- Additional Reviews (would be generated by PHP in WordPress) -->
+                                <div class="lr-detailed-review-card">
+                                    <div class="lr-review-card-header">
+                                        <div class="lr-review-avatar">RJ</div>
+                                        <div class="lr-reviewer-info">
+                                            <div class="lr-reviewer-name">Robert Johnson<span class="lr-verified-badge">Verified</span></div>
+                                            <div class="lr-review-date">February 5, 2023</div>
+                                        </div>
+                                        <div class="lr-review-rating">
+                                            <span class="lr-star-filled">★</span>
+                                            <span class="lr-star-filled">★</span>
+                                            <span class="lr-star-filled">★</span>
+                                            <span class="lr-star-filled">★</span>
+                                            <span class="lr-star-filled">★</span>
+                                        </div>
+                                    </div>
+                                    <div class="lr-review-title">Exceptional Results</div>
+                                    <div class="lr-review-content">Dr. Barnard was extremely professional and knowledgeable. He took the time to explain the procedure in detail and answered all my questions. The results have been fantastic, and I couldn't be happier with my decision to choose MAXIM Hair Restoration.</div>
+                                </div>
+                                
+                                <div class="lr-detailed-review-card">
+                                    <div class="lr-review-card-header">
+                                        <div class="lr-review-avatar">AW</div>
+                                        <div class="lr-reviewer-info">
+                                            <div class="lr-reviewer-name">Amanda Wilson<span class="lr-verified-badge">Verified</span></div>
+                                            <div class="lr-review-date">January 18, 2023</div>
+                                        </div>
+                                        <div class="lr-review-rating">
+                                            <span class="lr-star-filled">★</span>
+                                            <span class="lr-star-filled">★</span>
+                                            <span class="lr-star-filled">★</span>
+                                            <span class="lr-star-filled">★</span>
+                                            <span class="lr-star-empty">★</span>
+                                        </div>
+                                    </div>
+                                    <div class="lr-review-title">Great Experience</div>
+                                    <div class="lr-review-content">I was nervous about the procedure, but Dr. Barnard and his team made me feel at ease. They were very thorough in explaining what to expect and the aftercare process. The facility was clean and modern, and the staff was friendly and professional.</div>
+                                </div>
+                                
+                                <div class="lr-detailed-review-card">
+                                    <div class="lr-review-card-header">
+                                        <div class="lr-review-avatar">DM</div>
+                                        <div class="lr-reviewer-info">
+                                            <div class="lr-reviewer-name">David Miller<span class="lr-verified-badge">Verified</span></div>
+                                            <div class="lr-review-date">December 5, 2022</div>
+                                        </div>
+                                        <div class="lr-review-rating">
+                                            <span class="lr-star-filled">★</span>
+                                            <span class="lr-star-filled">★</span>
+                                            <span class="lr-star-filled">★</span>
+                                            <span class="lr-star-filled">★</span>
+                                            <span class="lr-star-filled">★</span>
+                                        </div>
+                                    </div>
+                                    <div class="lr-review-title">Life-Changing Results</div>
+                                    <div class="lr-review-content">I can't express how happy I am with the results of my hair transplant. Dr. Barnard is truly an expert in his field. The procedure was much easier than I anticipated, and the recovery was quick. The results look completely natural, and I've received so many compliments.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>This is a demonstration of the WordPress integration for MAXIM Hair Restoration. In a real implementation, all data would be loaded from the WordPress database.</p>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const doctorButtons = document.querySelectorAll('.doctor-button');
+            const reviewsContainer = document.getElementById('maxim-doctor-reviews');
+            
+            // Sample data for demonstration purposes
+            const doctorData = {
+                'dr-barnard': {
+                    name: 'Dr. Lawrence Barnard',
+                    title: 'Board-Certified Hair Transplant Specialist',
+                    specialty: 'Hair Transplantation',
+                    experience: 'Nearly a decade',
+                    bio: 'Dr. Lawrence Barnard is a Board-Certified hair transplant specialist with nearly a decade of hair restoration experience in NYC and Long Island.',
+                    image: 'https://www.maximhairrestoration.com/wp-content/uploads/2024/03/Mask-group20.jpg',
+                    link: 'https://www.maximhairrestoration.com/our-doctors/dr-barnard/'
+                },
+                'dr-stoller': {
+                    name: 'Dr. Roy B. Stoller',
+                    title: 'Hair Restoration Specialist',
+                    specialty: 'Hair Transplantation',
+                    experience: '25+ years',
+                    bio: 'Dr. Roy B. Stoller is a hair restoration specialist with over 25 years of experience in New York City and New Jersey.',
+                    image: 'https://www.maximhairrestoration.com/wp-content/uploads/2024/03/Mask-group-1.jpg',
+                    link: 'https://www.maximhairrestoration.com/our-doctors/dr-roy-b-stoller/'
+                },
+                'rhonda-daniels': {
+                    name: 'Rhonda Daniels, PA-C',
+                    title: 'Physician Associate',
+                    specialty: 'FUE Hair Transplant and Hybrid Hair Restoration',
+                    experience: '10+ years',
+                    bio: 'Rhonda Daniels is a Physician Associate with over 10 years of experience in hair restoration procedures in NYC, Long Island, and Sarasota.',
+                    image: 'https://www.maximhairrestoration.com/wp-content/uploads/2024/03/Mask-group-2.jpg',
+                    link: 'https://www.maximhairrestoration.com/our-doctors/rhonda-daniels-pa-c/'
+                },
+                'marcelo-acosta': {
+                    name: 'Marcelo Acosta, PA-C',
+                    title: 'Physician Associate',
+                    specialty: 'Hair Transplantation',
+                    experience: '20+ years',
+                    bio: 'Marcelo Acosta is a Physician Associate with over 20 years of experience in New York City and Long Island.',
+                    image: 'https://www.maximhairrestoration.com/wp-content/uploads/2024/03/Mask-group-3.jpg',
+                    link: 'https://www.maximhairrestoration.com/our-doctors/marcelo-acosta/'
+                },
+                'theresa-lu': {
+                    name: 'Theresa Lu, PA-C',
+                    title: 'Physician Associate',
+                    specialty: 'Hair Restoration',
+                    experience: '2+ years',
+                    bio: 'Theresa Lu is a Physician Associate specializing in hair restoration procedures in Alexandria, VA.',
+                    image: 'https://www.maximhairrestoration.com/wp-content/uploads/2024/03/Mask-group-4.jpg',
+                    link: 'https://www.maximhairrestoration.com/our-doctors/theresa-lu/'
+                },
+                'ronald-jeganathan': {
+                    name: 'Ronald Jeganathan, PA-C',
+                    title: 'Clinician',
+                    specialty: 'Hair Restoration',
+                    experience: '5+ years',
+                    bio: 'Ronald Jeganathan is a clinician specializing in hair restoration procedures in New York City, Long Island, and New Jersey.',
+                    image: 'https://www.maximhairrestoration.com/wp-content/uploads/2024/03/Mask-group-5.jpg',
+                    link: 'https://www.maximhairrestoration.com/our-doctors/clinician-ronald-jeganathan/'
+                }
+            };
+            
+            // In a real WordPress implementation, this would be an AJAX call to the server
+            // Here we're just simulating the doctor card update for demonstration
+            doctorButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    doctorButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Get doctor ID
+                    const doctorId = this.dataset.doctorId;
+                    const doctor = doctorData[doctorId];
+                    
+                    // Update the doctor card
+                    const doctorCard = document.querySelector('.lr-doctor-card');
+                    doctorCard.querySelector('.lr-doctor-image').src = doctor.image;
+                    doctorCard.querySelector('.lr-doctor-image').alt = doctor.name;
+                    doctorCard.querySelector('.lr-doctor-name').textContent = doctor.name;
+                    doctorCard.querySelector('.lr-doctor-title').textContent = doctor.title;
+                    doctorCard.querySelector('.lr-doctor-specialty').textContent = doctor.specialty;
+                    doctorCard.querySelector('.lr-doctor-experience').textContent = 'Experience: ' + doctor.experience;
+                    doctorCard.querySelector('.lr-doctor-bio').textContent = doctor.bio;
+                    doctorCard.querySelector('.lr-doctor-link').href = doctor.link;
+                    
+                    // In a real implementation, the reviews would also be updated via AJAX
+                    // Here we're just showing a message for demonstration
+                    const reviewsList = document.querySelector('.lr-reviews-list');
+                    reviewsList.innerHTML += '<div class="lr-detailed-review-card"><div class="lr-review-card-header"><div class="lr-review-avatar">NOTE</div><div class="lr-reviewer-info"><div class="lr-reviewer-name">Demo Note</div></div></div><div class="lr-review-content">In a real WordPress implementation, this would load reviews specific to ' + doctor.name + ' via AJAX.</div></div>';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
