@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TestimonialSlider Test</title>
+    <link rel="stylesheet" href="../components/styles.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #f9fafb;
+        }
+        
+        h1, h2 {
+            color: #1f2937;
+        }
+        
+        .test-container {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background-color: #fff;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>TestimonialSlider Test</h1>
+    
+    <h2>Basic Example (Auto-play)</h2>
+    <div class="test-container">
+        <div class="testimonial-slider-container" 
+             data-testimonials='[
+                 {"name":"John Smith","rating":5,"date":"2023-05-15","content":"Great experience! The staff was professional and the facility was clean and modern.","avatar":""},
+                 {"name":"Sarah Johnson","rating":4,"date":"2023-04-22","content":"Very satisfied with my experience. The procedure was quick and the results were better than expected.","avatar":""},
+                 {"name":"Michael Brown","rating":5,"date":"2023-03-10","content":"I had a great experience at this location. The staff was friendly and the results were amazing.","avatar":""}
+             ]'
+             data-auto-play="true"
+             data-interval="5000">
+        </div>
+    </div>
+    
+    <h2>Without Auto-play</h2>
+    <div class="test-container">
+        <div class="testimonial-slider-container" 
+             data-testimonials='[
+                 {"name":"Emily Davis","rating":4,"date":"2023-02-18","content":"Very professional service. I would definitely recommend this location to friends and family.","avatar":""},
+                 {"name":"Robert Wilson","rating":5,"date":"2023-01-05","content":"Outstanding results! The team was knowledgeable and made me feel comfortable throughout the process.","avatar":""},
+                 {"name":"Jennifer Lee","rating":3,"date":"2022-12-20","content":"Good experience overall, but there were some delays in the process.","avatar":""}
+             ]'
+             data-auto-play="false">
+        </div>
+    </div>
+    
+    <h2>With Long Content</h2>
+    <div class="test-container">
+        <div class="testimonial-slider-container" 
+             data-testimonials='[
+                 {"name":"David Miller","rating":5,"date":"2023-05-10","content":"Outstanding results! The team was knowledgeable and made me feel comfortable throughout the process. I was initially nervous about the procedure, but they explained everything in detail and answered all my questions. The facility was clean and modern, and the follow-up care was excellent. I would highly recommend this location to anyone looking for top-quality service.","avatar":""},
+                 {"name":"Lisa Anderson","rating":4,"date":"2023-04-15","content":"Very satisfied with my experience. The procedure was quick and the results were better than expected. The staff was friendly and professional, and they made sure I was comfortable throughout the process. The only reason I'm not giving 5 stars is because the waiting time was a bit longer than expected.","avatar":""}
+             ]'
+             data-auto-play="true"
+             data-interval="7000">
+        </div>
+    </div>
+    
+    <script src="../components/TestimonialSlider.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof window.LRComponents !== 'undefined' && 
+                typeof window.LRComponents.TestimonialSlider === 'function') {
+                window.LRComponents.TestimonialSlider();
+            }
+        });
+    </script>
+</body>
+</html>
