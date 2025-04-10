@@ -1,0 +1,318 @@
+/**
+ * Styles for MAXIM Hair Restoration Doctor Reviews Component
+ * WordPress Integration Version
+ */
+
+/* Base styles */
+.maxim-doctor-reviews-container {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    color: var(--lr-text-medium, #333333);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.maxim-section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--lr-border-light, #e5e5e5);
+    color: var(--lr-primary-color, #973030);
+}
+
+.maxim-section-description {
+    margin-bottom: 1.5rem;
+}
+
+.maxim-scroll-container {
+    min-height: 600px;
+    border: 1px solid var(--lr-border-light, #e5e5e5);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: var(--lr-bg-light, #f9fafb);
+    margin-top: 1.5rem;
+}
+
+/* Doctor selector */
+.doctor-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.doctor-button {
+    padding: 0.75rem 1rem;
+    background-color: var(--lr-bg-medium, #f3f4f6);
+    border: 1px solid var(--lr-border-medium, #cccccc);
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.doctor-button img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.doctor-button.active {
+    background-color: var(--lr-primary-color, #973030);
+    color: white;
+    border-color: var(--lr-primary-color, #973030);
+}
+
+.doctor-button:hover:not(.active) {
+    background-color: var(--lr-border-light, #e5e5e5);
+    transform: translateY(-2px);
+}
+
+/* Layout styles */
+.lr-location-reviews-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.lr-layout-with-doctor {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.lr-layout-reviews-only {
+    width: 100%;
+}
+
+/* Doctor card styles */
+.lr-doctor-card {
+    background-color: var(--lr-bg-white, #ffffff);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    position: sticky;
+    top: 1.5rem;
+    max-height: calc(100vh - 2 * 1.5rem);
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.lr-doctor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.lr-doctor-image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+
+.lr-doctor-image {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.lr-doctor-card:hover .lr-doctor-image {
+    transform: scale(1.05);
+}
+
+.lr-doctor-info {
+    padding: 1rem;
+}
+
+.lr-doctor-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--lr-text-dark, #000000);
+}
+
+.lr-doctor-title {
+    font-size: 0.875rem;
+    color: var(--lr-primary-color, #973030);
+    margin-bottom: 0.5rem;
+}
+
+.lr-doctor-specialty {
+    font-size: 0.875rem;
+    color: var(--lr-text-medium, #333333);
+    margin-bottom: 0.5rem;
+}
+
+.lr-doctor-experience {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--lr-text-dark, #000000);
+    margin-bottom: 0.25rem;
+}
+
+.lr-doctor-bio {
+    font-size: 0.875rem;
+    color: var(--lr-text-medium, #333333);
+    margin-bottom: 1rem;
+}
+
+.lr-doctor-link-container {
+    margin-top: 1rem;
+}
+
+.lr-doctor-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--lr-primary-color, #973030);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.lr-doctor-link:hover {
+    background-color: var(--lr-primary-dark, #7a2626);
+}
+
+/* Review card styles */
+.lr-reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.lr-detailed-review-card {
+    background-color: var(--lr-bg-white, #ffffff);
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    padding: 1rem;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.lr-detailed-review-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.lr-review-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.lr-review-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--lr-primary-light, #b44040);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.lr-reviewer-info {
+    flex: 1;
+}
+
+.lr-reviewer-name {
+    font-weight: 600;
+    color: var(--lr-text-dark, #000000);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lr-verified-badge {
+    font-size: 0.75rem;
+    background-color: #10b981;
+    color: white;
+    padding: 0.125rem 0.375rem;
+    border-radius: 9999px;
+    font-weight: 500;
+}
+
+.lr-review-date {
+    font-size: 0.75rem;
+    color: var(--lr-text-light, #666666);
+}
+
+.lr-review-rating {
+    display: flex;
+    gap: 0.125rem;
+}
+
+.lr-star-filled {
+    color: var(--lr-star-filled, #973030);
+}
+
+.lr-star-empty {
+    color: var(--lr-star-empty, #cccccc);
+}
+
+.lr-review-title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--lr-text-dark, #000000);
+}
+
+.lr-review-content {
+    font-size: 0.875rem;
+    color: var(--lr-text-medium, #333333);
+    line-height: 1.5;
+}
+
+/* Loading and error states */
+.lr-loading, .lr-error, .lr-no-reviews {
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--lr-bg-white, #ffffff);
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.lr-loading {
+    color: var(--lr-text-medium, #333333);
+}
+
+.lr-error {
+    color: var(--lr-error-text, #973030);
+}
+
+.lr-no-reviews {
+    color: var(--lr-text-light, #666666);
+    font-style: italic;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .lr-layout-with-doctor {
+        grid-template-columns: 1fr;
+    }
+    
+    .lr-doctor-card {
+        position: relative;
+        top: 0;
+        max-height: none;
+    }
+    
+    .doctor-selector {
+        flex-direction: column;
+    }
+}

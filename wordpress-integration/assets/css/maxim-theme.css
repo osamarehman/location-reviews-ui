@@ -1,0 +1,68 @@
+/**
+ * MAXIM Hair Restoration Brand Theme
+ * WordPress Integration Version
+ */
+
+:root {
+    /* Primary brand colors */
+    --lr-primary-color: #973030;      /* Deep red - Main brand color */
+    --lr-primary-dark: #7a2626;       /* Darker red - Used for hover states */
+    --lr-primary-light: #b44040;      /* Lighter red - Used for backgrounds, accents */
+    
+    /* Text colors */
+    --lr-text-dark: #000000;          /* Black - Used for headings, important text */
+    --lr-text-medium: #333333;        /* Dark gray - Used for body text */
+    --lr-text-light: #666666;         /* Medium gray - Used for secondary text */
+    
+    /* Background and border colors */
+    --lr-bg-white: #ffffff;           /* White - Used for card backgrounds */
+    --lr-bg-light: #f9fafb;           /* Very light gray - Used for backgrounds */
+    --lr-bg-medium: #f3f4f6;          /* Light gray - Used for button backgrounds */
+    --lr-border-light: #e5e5e5;       /* Very light gray - Used for subtle borders */
+    --lr-border-medium: #cccccc;      /* Light gray - Used for more prominent borders */
+    
+    /* Star rating colors */
+    --lr-star-filled: #973030;        /* Use brand red for filled stars */
+    --lr-star-empty: #cccccc;         /* Light gray - Used for empty stars */
+    
+    /* Success and error colors */
+    --lr-success-bg: #f0f7f0;         /* Very light green - Success message background */
+    --lr-success-text: #2e7d32;       /* Dark green - Success message text */
+    --lr-success-border: #4caf50;     /* Medium green - Success message border */
+    --lr-error-bg: #fdf2f2;           /* Very light red - Error message background */
+    --lr-error-text: #973030;         /* Brand red - Error message text */
+    --lr-error-border: #973030;       /* Brand red - Error message border */
+    
+    /* Spacing variables */
+    --lr-spacing-xs: 0.25rem;         /* 4px */
+    --lr-spacing-sm: 0.5rem;          /* 8px */
+    --lr-spacing-md: 0.75rem;         /* 12px */
+    --lr-spacing-lg: 1rem;            /* 16px */
+    --lr-spacing-xl: 1.5rem;          /* 24px */
+    --lr-spacing-2xl: 2rem;           /* 32px */
+    
+    /* Typography */
+    --lr-text-xs: 0.75rem;            /* 12px */
+    --lr-text-sm: 0.875rem;           /* 14px */
+    --lr-text-base: 1rem;             /* 16px */
+    --lr-text-lg: 1.125rem;           /* 18px */
+    --lr-text-xl: 1.25rem;            /* 20px */
+    --lr-text-2xl: 1.5rem;            /* 24px */
+    --lr-text-3xl: 1.875rem;          /* 30px */
+    
+    /* Border radius */
+    --lr-radius-sm: 0.125rem;         /* 2px */
+    --lr-radius-md: 0.375rem;         /* 6px */
+    --lr-radius-lg: 0.5rem;           /* 8px */
+    --lr-radius-full: 9999px;         /* Circular */
+    
+    /* Shadows */
+    --lr-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --lr-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --lr-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    /* Transitions */
+    --lr-transition-fast: 0.2s ease-in-out;
+    --lr-transition-normal: 0.3s ease-in-out;
+    --lr-transition-slow: 0.5s ease-in-out;
+}
