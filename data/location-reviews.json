@@ -114,6 +114,54 @@
           "verified": true,
           "link": "https://example.com/reviews/nyc/3",
           "doctor": "rhonda-daniels"
+        }, 
+         {
+          "id": 4,
+          "name": "Emily Davis",
+          "rating": 5,
+          "date": "2023-06-05",
+          "title": "Worth Every Penny",
+          "content": "The LA location exceeded all my expectations. From the moment I walked in, I was treated like a VIP. The staff was knowledgeable and attentive, and the facility was absolutely beautiful. The procedure was explained in detail, and there were no surprises. The results are fantastic, and I've received so many compliments. Definitely worth the investment!",
+          "avatar": "",
+          "verified": true,
+          "link": "https://example.com/reviews/la/1",
+          "doctor": "dr-rodriguez"
+        },
+        {
+          "id": 5,
+          "name": "Robert Wilson",
+          "rating": 4,
+          "date": "2023-05-18",
+          "title": "Professional and Caring Staff",
+          "content": "I was nervous about my procedure, but the team at the Los Angeles location put me at ease. They were patient with all my questions and concerns. The facility is modern and clean, and the procedure went smoothly. The only reason for 4 stars instead of 5 is that parking can be a bit challenging in the area.",
+          "avatar": "",
+          "verified": true,
+          "link": "https://example.com/reviews/la/2",
+          "doctor": "dr-patel"
+        },
+        {
+          "id": 6,
+          "name": "Jennifer Lee",
+          "rating": 5,
+          "date": "2023-04-30",
+          "title": "Amazing Results",
+          "content": "I couldn't be happier with my experience at the LA location. The consultation was thorough, and they created a personalized plan for me. The procedure was much more comfortable than I expected, and the results are even better than I hoped for. The follow-up care has been excellent as well. I highly recommend this location to anyone considering the procedure.",
+          "avatar": "",
+          "verified": false,
+          "link": "https://example.com/reviews/la/3",
+          "doctor": "dr-rodriguez"
+        },
+        {
+          "id": 7,
+          "name": "David Miller",
+          "rating": 5,
+          "date": "2023-03-22",
+          "title": "Top-Notch Experience",
+          "content": "From start to finish, my experience at the Los Angeles location was exceptional. The staff was friendly and professional, and the facility was impressive. The procedure itself was quick and relatively painless, and the results have been life-changing. I appreciate the attention to detail and the personalized care I received.",
+          "avatar": "",
+          "verified": true,
+          "link": "https://example.com/reviews/la/4",
+          "doctor": "dr-patel"
         }
       ]
     },
