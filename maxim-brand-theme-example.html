@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAXIM Brand Theme Example</title>
+    <link rel="stylesheet" href="components/styles.css">
+    <link rel="stylesheet" href="components/maxim-theme.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #f9fafb;
+        }
+        
+        h1, h2, h3 {
+            color: var(--lr-text-dark);
+        }
+        
+        .example-section {
+            margin-bottom: 3rem;
+        }
+        
+        .example-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--lr-border-light);
+            color: var(--lr-primary-color);
+        }
+        
+        .example-description {
+            margin-bottom: 1.5rem;
+        }
+        
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .color-swatch {
+            padding: 1rem;
+            border-radius: var(--lr-radius-md);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            height: 100px;
+            justify-content: space-between;
+        }
+        
+        .color-swatch.light-text {
+            color: var(--lr-text-dark);
+        }
+        
+        .color-name {
+            font-weight: bold;
+        }
+        
+        .color-value {
+            font-family: monospace;
+        }
+        
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--lr-primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--lr-radius-md);
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color var(--lr-transition-fast);
+        }
+        
+        .theme-toggle:hover {
+            background-color: var(--lr-primary-dark);
+        }
+        
+        .components-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .components-preview {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>MAXIM Brand Theme Example</h1>
+    <p>This page demonstrates the MAXIM brand colors applied to the location-reviews-ui components.</p>
+    
+    <button id="theme-toggle" class="theme-toggle">Toggle Dark Mode</button>
+    
+    <div class="example-section">
+        <h2 class="example-title">Brand Color Palette</h2>
+        <div class="example-description">
+            <p>The MAXIM brand uses a deep red (#973030) as its primary color, along with black and white for text and backgrounds.</p>
+        </div>
+        
+        <div class="color-palette">
+            <div class="color-swatch" style="background-color: var(--lr-primary-color);">
+                <span class="color-name">Primary Color</span>
+                <span class="color-value">--lr-primary-color: #973030</span>
+            </div>
+            <div class="color-swatch" style="background-color: var(--lr-primary-dark);">
+                <span class="color-name">Primary Dark</span>
+                <span class="color-value">--lr-primary-dark: #7a2626</span>
+            </div>
+            <div class="color-swatch" style="background-color: var(--lr-primary-light);">
+                <span class="color-name">Primary Light</span>
+                <span class="color-value">--lr-primary-light: #b44040</span>
+            </div>
+            <div class="color-swatch light-text" style="background-color: var(--lr-bg-white);">
+                <span class="color-name">Background White</span>
+                <span class="color-value">--lr-bg-white: #ffffff</span>
+            </div>
+            <div class="color-swatch" style="background-color: var(--lr-text-dark);">
+                <span class="color-name">Text Dark</span>
+                <span class="color-value">--lr-text-dark: #000000</span>
+            </div>
+            <div class="color-swatch" style="background-color: var(--lr-text-medium);">
+                <span class="color-name">Text Medium</span>
+                <span class="color-value">--lr-text-medium: #333333</span>
+            </div>
+            <div class="color-swatch" style="background-color: var(--lr-text-light);">
+                <span class="color-name">Text Light</span>
+                <span class="color-value">--lr-text-light: #666666</span>
+            </div>
+            <div class="color-swatch light-text" style="background-color: var(--lr-border-light);">
+                <span class="color-name">Border Light</span>
+                <span class="color-value">--lr-border-light: #e5e5e5</span>
+            </div>
+            <div class="color-swatch light-text" style="background-color: var(--lr-border-medium);">
+                <span class="color-name">Border Medium</span>
+                <span class="color-value">--lr-border-medium: #cccccc</span>
+            </div>
+            <div class="color-swatch" style="background-color: var(--lr-star-filled);">
+                <span class="color-name">Star Filled</span>
+                <span class="color-value">--lr-star-filled: #973030</span>
+            </div>
+            <div class="color-swatch light-text" style="background-color: var(--lr-star-empty);">
+                <span class="color-name">Star Empty</span>
+                <span class="color-value">--lr-star-empty: #cccccc</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="example-section">
+        <h2 class="example-title">Components Preview</h2>
+        <div class="example-description">
+            <p>Here are some examples of the components using the MAXIM brand colors:</p>
+        </div>
+        
+        <div class="components-preview">
+            <!-- SimpleReviewCard Component -->
+            <div class="simple-review-card-container" 
+                 data-name="John Smith" 
+                 data-rating="5" 
+                 data-date="2023-05-15" 
+                 data-content="Great experience! The staff was professional and the facility was clean and modern."
+                 data-avatar="">
+            </div>
+            
+            <!-- RatingsSummary Component -->
+            <div class="ratings-summary-container" 
+                 data-average="4.5" 
+                 data-total="120"
+                 data-distribution='{"5":80,"4":20,"3":15,"2":3,"1":2}'>
+            </div>
+            
+            <!-- Doctor Card Preview -->
+            <div class="lr-doctor-card">
+                <div class="lr-doctor-image-container">
+                    <img class="lr-doctor-image" src="https://www.maximhairrestoration.com/wp-content/uploads/2024/03/Mask-group20.jpg" alt="Dr. Lawrence Barnard">
+                </div>
+                <div class="lr-doctor-info">
+                    <h3 class="lr-doctor-name">Dr. Lawrence Barnard</h3>
+                    <div class="lr-doctor-title">Board-Certified Hair Transplant Specialist</div>
+                    <div class="lr-doctor-specialty">Hair Transplantation</div>
+                    <div class="lr-doctor-experience">Experience: Nearly a decade</div>
+                    <div class="lr-doctor-bio">Dr. Lawrence Barnard is a Board-Certified hair transplant specialist with nearly a decade of hair restoration experience in NYC and Long Island.</div>
+                    <div class="lr-doctor-link-container">
+                        <a href="#" class="lr-doctor-link">View Profile</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Detailed Review Card Preview -->
+            <div class="lr-detailed-review-card lr-card-visible lr-clickable">
+                <div class="lr-review-card-header">
+                    <div class="lr-review-avatar">JS</div>
+                    <div class="lr-reviewer-info">
+                        <div class="lr-reviewer-name">John Smith<span class="lr-verified-badge">Verified</span></div>
+                        <div class="lr-review-date">May 15, 2023</div>
+                    </div>
+                    <div class="lr-review-rating">
+                        <span class="lr-star-filled">★</span>
+                        <span class="lr-star-filled">★</span>
+                        <span class="lr-star-filled">★</span>
+                        <span class="lr-star-filled">★</span>
+                        <span class="lr-star-filled">★</span>
+                    </div>
+                </div>
+                <div class="lr-review-title">Exceptional Service and Results</div>
+                <div class="lr-review-content">I had an amazing experience at the New York location. The staff was incredibly professional and made me feel comfortable throughout the entire process.</div>
+                <div class="lr-review-link-indicator"><span>Read more</span> <span class="lr-arrow">→</span></div>
+            </div>
+            
+            <!-- Form Message Preview -->
+            <div class="lr-form-message lr-success">
+                Thank you for your review! It will be published after moderation.
+            </div>
+            
+            <div class="lr-form-message lr-error">
+                There was an error submitting your review. Please try again.
+            </div>
+        </div>
+    </div>
+    
+    <script src="components/SimpleReviewCard.js"></script>
+    <script src="components/RatingsSummary.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize components
+            if (typeof window.LRComponents !== 'undefined') {
+                if (typeof window.LRComponents.SimpleReviewCard === 'function') {
+                    window.LRComponents.SimpleReviewCard();
+                }
+                if (typeof window.LRComponents.RatingsSummary === 'function') {
+                    window.LRComponents.RatingsSummary();
+                }
+            }
+            
+            // Theme toggle functionality
+            const themeToggle = document.getElementById('theme-toggle');
+            themeToggle.addEventListener('click', function() {
+                document.documentElement.classList.toggle('lr-dark-theme');
+                
+                if (document.documentElement.classList.contains('lr-dark-theme')) {
+                    themeToggle.textContent = 'Toggle Light Mode';
+                    document.body.style.backgroundColor = '#121212';
+                    document.body.style.color = '#e0e0e0';
+                } else {
+                    themeToggle.textContent = 'Toggle Dark Mode';
+                    document.body.style.backgroundColor = '#f9fafb';
+                    document.body.style.color = '#333';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
