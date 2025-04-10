@@ -503,6 +503,142 @@
     gap: var(--lr-spacing-xl);
 }
 
+/* Layout styles */
+.lr-layout-with-doctor {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: var(--lr-spacing-xl);
+    align-items: start;
+}
+
+.lr-layout-reviews-only {
+    width: 100%;
+}
+
+/* Doctor card styles */
+.lr-doctor-card {
+    background-color: var(--lr-bg-white);
+    border-radius: var(--lr-radius-lg);
+    box-shadow: var(--lr-shadow-md);
+    overflow: hidden;
+    position: sticky;
+    top: var(--lr-spacing-xl);
+    max-height: calc(100vh - 2 * var(--lr-spacing-xl));
+    overflow-y: auto;
+    transition: transform var(--lr-transition-normal), box-shadow var(--lr-transition-normal);
+}
+
+.lr-doctor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--lr-shadow-lg);
+}
+
+.lr-doctor-image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.lr-doctor-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--lr-transition-normal);
+}
+
+.lr-doctor-card:hover .lr-doctor-image {
+    transform: scale(1.05);
+}
+
+.lr-doctor-info {
+    padding: var(--lr-spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--lr-spacing-md);
+}
+
+.lr-doctor-name {
+    font-size: var(--lr-text-xl);
+    font-weight: bold;
+    color: var(--lr-text-dark);
+    margin: 0;
+}
+
+.lr-doctor-title {
+    font-size: var(--lr-text-lg);
+    color: var(--lr-primary-color);
+    font-weight: 500;
+}
+
+.lr-doctor-specialty {
+    font-size: var(--lr-text-base);
+    color: var(--lr-text-medium);
+}
+
+.lr-doctor-experience {
+    font-size: var(--lr-text-sm);
+    color: var(--lr-text-medium);
+    font-weight: 500;
+}
+
+.lr-doctor-bio {
+    font-size: var(--lr-text-base);
+    color: var(--lr-text-medium);
+    line-height: 1.6;
+    margin-top: var(--lr-spacing-md);
+}
+
+.lr-doctor-credentials {
+    margin-top: var(--lr-spacing-md);
+}
+
+.lr-credentials-title {
+    font-size: var(--lr-text-sm);
+    font-weight: 500;
+    color: var(--lr-text-dark);
+    margin-bottom: var(--lr-spacing-xs);
+}
+
+.lr-credentials-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.lr-credentials-list li {
+    font-size: var(--lr-text-sm);
+    color: var(--lr-text-medium);
+    padding: var(--lr-spacing-xs) 0;
+    position: relative;
+    padding-left: var(--lr-spacing-md);
+}
+
+.lr-credentials-list li::before {
+    content: '✓';
+    color: var(--lr-primary-color);
+    position: absolute;
+    left: 0;
+}
+
+.lr-doctor-link-container {
+    margin-top: var(--lr-spacing-lg);
+}
+
+.lr-doctor-link {
+    display: inline-block;
+    padding: var(--lr-spacing-sm) var(--lr-spacing-lg);
+    background-color: var(--lr-primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--lr-radius-md);
+    font-weight: 500;
+    transition: background-color var(--lr-transition-fast);
+}
+
+.lr-doctor-link:hover {
+    background-color: var(--lr-primary-dark);
+}
+
 .lr-location-info {
     display: flex;
     flex-direction: column;
@@ -623,6 +759,67 @@
     flex-direction: column;
     gap: var(--lr-spacing-md);
     border-left: 4px solid var(--lr-primary-color);
+    transition: transform var(--lr-transition-normal), box-shadow var(--lr-transition-normal), opacity var(--lr-transition-normal);
+    position: relative;
+    opacity: 0;
+}
+
+/* Animation classes */
+.lr-card-visible {
+    opacity: 1;
+}
+
+.lr-animation-fade {
+    transform: translateY(20px);
+}
+
+.lr-animation-fade.lr-card-visible {
+    transform: translateY(0);
+}
+
+.lr-animation-scale {
+    transform: scale(0.95);
+}
+
+.lr-animation-scale.lr-card-visible {
+    transform: scale(1);
+}
+
+.lr-animation-slide {
+    transform: translateX(-20px);
+}
+
+.lr-animation-slide.lr-card-visible {
+    transform: translateX(0);
+}
+
+/* Clickable card styles */
+.lr-clickable {
+    cursor: pointer;
+}
+
+.lr-card-hover {
+    transform: translateY(-5px);
+    box-shadow: var(--lr-shadow-lg);
+}
+
+.lr-review-link-indicator {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: var(--lr-spacing-sm);
+    color: var(--lr-primary-color);
+    font-size: var(--lr-text-sm);
+    font-weight: 500;
+}
+
+.lr-review-link-indicator .lr-arrow {
+    margin-left: var(--lr-spacing-xs);
+    transition: transform var(--lr-transition-fast);
+}
+
+.lr-clickable:hover .lr-review-link-indicator .lr-arrow {
+    transform: translateX(3px);
 }
 
 .lr-review-title {
@@ -681,7 +878,8 @@
 @media (max-width: 768px) {
     .lr-review-card,
     .lr-detailed-review-card,
-    .lr-location-info {
+    .lr-location-info,
+    .lr-doctor-card {
         padding: var(--lr-spacing-lg);
     }
 
@@ -693,6 +891,22 @@
     .lr-location-image {
         width: 100%;
         height: 180px;
+    }
+
+    .lr-layout-with-doctor {
+        grid-template-columns: 1fr;
+        gap: var(--lr-spacing-xl);
+    }
+
+    .lr-doctor-card {
+        position: relative;
+        top: 0;
+        max-height: none;
+        overflow-y: visible;
+    }
+
+    .lr-doctor-image-container {
+        height: 150px;
     }
 
     .lr-review-card-header {

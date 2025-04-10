@@ -1,7 +1,8 @@
 /**
  * LocationReviewsStack Component
  *
- * A component that displays detailed review cards stacked vertically for a specific location.
+ * A component that displays detailed review cards stacked vertically for a specific location,
+ * with an optional fixed doctor card beside the reviews.
  * The component fetches location and review data from a JSON file stored in the GitHub repository.
  *
  * Usage:
@@ -9,8 +10,20 @@
  *      data-location-id="nyc"
  *      data-show-location-info="true"
  *      data-max-reviews="5"
+ *      data-doctor-id="dr-smith"
+ *      data-show-doctor-card="true"
+ *      data-animation="fade"
  *      data-data-url="https://raw.githubusercontent.com/osamarehman/location-reviews-ui/main/data/location-reviews.json">
  * </div>
+ *
+ * Parameters:
+ * - data-location-id: ID of the location to display (required)
+ * - data-show-location-info: Whether to show location information (default: true)
+ * - data-max-reviews: Maximum number of reviews to display (0 = show all)
+ * - data-doctor-id: ID of the doctor to display in the fixed card (optional)
+ * - data-show-doctor-card: Whether to show the doctor card (default: false)
+ * - data-animation: Animation type for cards ("fade", "slide", "scale", "none") (default: "fade")
+ * - data-data-url: URL to the JSON data file (default: GitHub repository URL)
  */
 
 // Create the global LRComponents object if it doesn't exist
@@ -174,8 +187,11 @@ window.LRComponents.LocationReviewsStack = function() {
     containers.forEach(function(container) {
         // Get data attributes
         const locationId = container.dataset.locationId || '';
-        const showLocationInfo = container.dataset.showLocationInfo === 'true';
+        const showLocationInfo = container.dataset.showLocationInfo !== 'false'; // Default to true
         const maxReviews = parseInt(container.dataset.maxReviews || 0, 10);
+        const doctorId = container.dataset.doctorId || '';
+        const showDoctorCard = container.dataset.showDoctorCard === 'true';
+        const animation = container.dataset.animation || 'fade';
         const dataUrl = container.dataset.dataUrl || 'https://raw.githubusercontent.com/osamarehman/location-reviews-ui/main/data/location-reviews.json';
 
         // Show loading state
@@ -189,8 +205,18 @@ window.LRComponents.LocationReviewsStack = function() {
                     return;
                 }
 
+                // Find doctor if specified
+                let doctorData = null;
+                if (showDoctorCard && doctorId) {
+                    doctorData = locationData.doctors?.find(doctor => doctor.id === doctorId);
+                    if (!doctorData && locationData.doctors?.length > 0) {
+                        // If specified doctor not found, use the first one
+                        doctorData = locationData.doctors[0];
+                    }
+                }
+
                 // Render the component
-                renderLocationReviews(container, locationData, showLocationInfo, maxReviews);
+                renderLocationReviews(container, locationData, showLocationInfo, maxReviews, doctorData, animation);
             })
             .catch(error => {
                 console.error('Error fetching location data:', error);
@@ -230,7 +256,7 @@ window.LRComponents.LocationReviewsStack = function() {
     /**
      * Render the location reviews
      */
-    function renderLocationReviews(container, locationData, showLocationInfo, maxReviews) {
+    function renderLocationReviews(container, locationData, showLocationInfo, maxReviews, doctorData, animation) {
         // Create the main container
         const stackContainer = document.createElement('div');
         stackContainer.className = 'lr-location-reviews-stack';
@@ -239,6 +265,17 @@ window.LRComponents.LocationReviewsStack = function() {
         if (showLocationInfo) {
             const locationInfo = createLocationInfo(locationData);
             stackContainer.appendChild(locationInfo);
+        }
+
+        // Create the layout container for doctor card and reviews
+        const layoutContainer = document.createElement('div');
+        layoutContainer.className = doctorData ? 'lr-layout-with-doctor' : 'lr-layout-reviews-only';
+        stackContainer.appendChild(layoutContainer);
+
+        // Add doctor card if provided
+        if (doctorData) {
+            const doctorCard = createDoctorCard(doctorData);
+            layoutContainer.appendChild(doctorCard);
         }
 
         // Add reviews section
@@ -285,13 +322,20 @@ window.LRComponents.LocationReviewsStack = function() {
 
         // Get reviews to display
         let reviews = locationData.reviews;
+
+        // Filter by doctor if doctor card is shown
+        if (doctorData) {
+            reviews = reviews.filter(review => review.doctor === doctorData.id);
+        }
+
+        // Apply max reviews limit
         if (maxReviews > 0 && reviews.length > maxReviews) {
             reviews = reviews.slice(0, maxReviews);
         }
 
         // Add each review card
-        reviews.forEach(review => {
-            const reviewCard = createReviewCard(review);
+        reviews.forEach((review, index) => {
+            const reviewCard = createReviewCard(review, animation, index);
             reviewsStack.appendChild(reviewCard);
         });
 
@@ -301,15 +345,25 @@ window.LRComponents.LocationReviewsStack = function() {
             seeAllLink.className = 'lr-see-all-link';
             seeAllLink.href = locationData.website || '#';
             seeAllLink.textContent = `See all ${locationData.total_reviews} reviews`;
+            seeAllLink.target = '_blank';
+            seeAllLink.rel = 'noopener noreferrer';
             reviewsStack.appendChild(seeAllLink);
         }
 
         reviewsSection.appendChild(reviewsStack);
-        stackContainer.appendChild(reviewsSection);
+        layoutContainer.appendChild(reviewsSection);
 
         // Replace the container content
         container.innerHTML = '';
         container.appendChild(stackContainer);
+
+        // Apply animations after a short delay to ensure DOM is ready
+        setTimeout(() => {
+            const cards = container.querySelectorAll('.lr-detailed-review-card');
+            cards.forEach(card => {
+                card.classList.add('lr-card-visible');
+            });
+        }, 100);
     }
 
     /**
@@ -382,11 +436,155 @@ window.LRComponents.LocationReviewsStack = function() {
     }
 
     /**
+     * Create a doctor card element
+     */
+    function createDoctorCard(doctor) {
+        const card = document.createElement('div');
+        card.className = 'lr-doctor-card';
+
+        // Create doctor image
+        if (doctor.image) {
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'lr-doctor-image-container';
+
+            const image = document.createElement('img');
+            image.className = 'lr-doctor-image';
+            image.src = doctor.image;
+            image.alt = doctor.name;
+            imageContainer.appendChild(image);
+
+            card.appendChild(imageContainer);
+        }
+
+        // Create doctor info
+        const infoContainer = document.createElement('div');
+        infoContainer.className = 'lr-doctor-info';
+
+        // Doctor name
+        const nameElement = document.createElement('h3');
+        nameElement.className = 'lr-doctor-name';
+        nameElement.textContent = doctor.name;
+        infoContainer.appendChild(nameElement);
+
+        // Doctor title
+        if (doctor.title) {
+            const titleElement = document.createElement('div');
+            titleElement.className = 'lr-doctor-title';
+            titleElement.textContent = doctor.title;
+            infoContainer.appendChild(titleElement);
+        }
+
+        // Doctor specialty
+        if (doctor.specialty) {
+            const specialtyElement = document.createElement('div');
+            specialtyElement.className = 'lr-doctor-specialty';
+            specialtyElement.textContent = doctor.specialty;
+            infoContainer.appendChild(specialtyElement);
+        }
+
+        // Doctor experience
+        if (doctor.experience) {
+            const experienceElement = document.createElement('div');
+            experienceElement.className = 'lr-doctor-experience';
+            experienceElement.textContent = `Experience: ${doctor.experience}`;
+            infoContainer.appendChild(experienceElement);
+        }
+
+        // Doctor bio
+        if (doctor.bio) {
+            const bioElement = document.createElement('div');
+            bioElement.className = 'lr-doctor-bio';
+            bioElement.textContent = doctor.bio;
+            infoContainer.appendChild(bioElement);
+        }
+
+        // Doctor credentials
+        if (doctor.credentials && doctor.credentials.length > 0) {
+            const credentialsContainer = document.createElement('div');
+            credentialsContainer.className = 'lr-doctor-credentials';
+
+            const credentialsTitle = document.createElement('div');
+            credentialsTitle.className = 'lr-credentials-title';
+            credentialsTitle.textContent = 'Credentials:';
+            credentialsContainer.appendChild(credentialsTitle);
+
+            const credentialsList = document.createElement('ul');
+            credentialsList.className = 'lr-credentials-list';
+
+            doctor.credentials.forEach(credential => {
+                const item = document.createElement('li');
+                item.textContent = credential;
+                credentialsList.appendChild(item);
+            });
+
+            credentialsContainer.appendChild(credentialsList);
+            infoContainer.appendChild(credentialsContainer);
+        }
+
+        // Doctor link
+        if (doctor.link) {
+            const linkContainer = document.createElement('div');
+            linkContainer.className = 'lr-doctor-link-container';
+
+            const link = document.createElement('a');
+            link.className = 'lr-doctor-link';
+            link.href = doctor.link;
+            link.textContent = 'View Profile';
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+
+            linkContainer.appendChild(link);
+            infoContainer.appendChild(linkContainer);
+        }
+
+        card.appendChild(infoContainer);
+
+        return card;
+    }
+
+    /**
      * Create a review card element
      */
-    function createReviewCard(review) {
+    function createReviewCard(review, animation, index) {
         const card = document.createElement('div');
         card.className = 'lr-detailed-review-card';
+
+        // Add animation class based on animation type
+        if (animation && animation !== 'none') {
+            card.classList.add(`lr-animation-${animation}`);
+            // Add delay based on index
+            card.style.animationDelay = `${index * 0.1}s`;
+            card.style.transitionDelay = `${index * 0.1}s`;
+        }
+
+        // Make the entire card clickable if there's a link
+        if (review.link) {
+            card.classList.add('lr-clickable');
+            card.addEventListener('click', function() {
+                window.open(review.link, '_blank', 'noopener,noreferrer');
+            });
+
+            // Add hover effect for clickable cards
+            card.addEventListener('mouseenter', function() {
+                this.classList.add('lr-card-hover');
+            });
+
+            card.addEventListener('mouseleave', function() {
+                this.classList.remove('lr-card-hover');
+            });
+
+            // Add keyboard accessibility
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'link');
+            card.setAttribute('aria-label', `Review by ${review.name}. Click to read more.`);
+
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    window.open(review.link, '_blank', 'noopener,noreferrer');
+                }
+            });
+        }
 
         // Create card header
         const header = document.createElement('div');
@@ -463,6 +661,14 @@ window.LRComponents.LocationReviewsStack = function() {
         contentElement.className = 'lr-review-content';
         contentElement.textContent = review.content;
         card.appendChild(contentElement);
+
+        // Add link indicator if there's a link
+        if (review.link) {
+            const linkIndicator = document.createElement('div');
+            linkIndicator.className = 'lr-review-link-indicator';
+            linkIndicator.innerHTML = '<span>Read more</span> <span class="lr-arrow">→</span>';
+            card.appendChild(linkIndicator);
+        }
 
         return card;
     }

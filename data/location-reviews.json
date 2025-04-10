@@ -10,6 +10,30 @@
       "total_reviews": 156,
       "image": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       "description": "Our New York City location offers state-of-the-art facilities and a team of experienced professionals dedicated to providing exceptional service.",
+      "doctors": [
+        {
+          "id": "dr-smith",
+          "name": "Dr. James Smith",
+          "title": "Medical Director",
+          "specialty": "Hair Transplant Specialist",
+          "experience": "15+ years",
+          "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+          "bio": "Dr. Smith is a board-certified specialist with over 15 years of experience in hair restoration. He has performed more than 3,000 successful procedures and is known for his meticulous attention to detail and natural-looking results.",
+          "credentials": ["Board Certified", "American Board of Hair Restoration Surgery", "International Society of Hair Restoration Surgery"],
+          "link": "https://example.com/nyc/dr-smith"
+        },
+        {
+          "id": "dr-johnson",
+          "name": "Dr. Emily Johnson",
+          "title": "Senior Surgeon",
+          "specialty": "Hair Restoration Expert",
+          "experience": "12+ years",
+          "image": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+          "bio": "Dr. Johnson specializes in advanced hair restoration techniques. With a background in dermatology and plastic surgery, she brings a unique perspective to hair restoration, focusing on both aesthetic outcomes and scalp health.",
+          "credentials": ["Board Certified", "American Academy of Dermatology", "American Society of Plastic Surgeons"],
+          "link": "https://example.com/nyc/dr-johnson"
+        }
+      ],
       "reviews": [
         {
           "id": 1,
@@ -19,7 +43,9 @@
           "title": "Exceptional Service and Results",
           "content": "I had an amazing experience at the New York location. The staff was incredibly professional and made me feel comfortable throughout the entire process. The results exceeded my expectations, and I couldn't be happier with my decision to choose this clinic. The facility was clean and modern, and the follow-up care was excellent.",
           "avatar": "",
-          "verified": true
+          "verified": true,
+          "link": "https://example.com/reviews/nyc/1",
+          "doctor": "dr-smith"
         },
         {
           "id": 2,
@@ -29,7 +55,9 @@
           "title": "Great Experience Overall",
           "content": "Very satisfied with my experience at the NYC location. The procedure was quick and the results were better than expected. The only reason I'm not giving 5 stars is because the waiting time was a bit longer than I anticipated. However, the staff was friendly and professional, and they made sure I was comfortable throughout the process.",
           "avatar": "",
-          "verified": true
+          "verified": true,
+          "link": "https://example.com/reviews/nyc/2",
+          "doctor": "dr-johnson"
         },
         {
           "id": 3,
@@ -39,7 +67,9 @@
           "title": "Highly Recommend",
           "content": "I had a great experience at this location. The staff was friendly and the results were amazing. The consultation was thorough and they answered all my questions. The procedure itself was much less uncomfortable than I expected, and the recovery was smooth. I've already recommended them to several friends.",
           "avatar": "",
-          "verified": true
+          "verified": true,
+          "link": "https://example.com/reviews/nyc/3",
+          "doctor": "dr-smith"
         }
       ]
     },
@@ -53,6 +83,30 @@
       "total_reviews": 124,
       "image": "https://images.unsplash.com/photo-1580655653885-65763b2597d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       "description": "Our Los Angeles location combines luxury with cutting-edge technology to provide you with the best possible experience and results.",
+      "doctors": [
+        {
+          "id": "dr-rodriguez",
+          "name": "Dr. Carlos Rodriguez",
+          "title": "Chief Medical Officer",
+          "specialty": "Advanced Hair Restoration",
+          "experience": "18+ years",
+          "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80",
+          "bio": "Dr. Rodriguez is a pioneer in hair restoration techniques, having developed several innovative approaches that are now industry standards. His commitment to research and continuous improvement ensures that his patients receive the most advanced care available.",
+          "credentials": ["Board Certified", "American Board of Hair Restoration Surgery", "International Alliance of Hair Restoration Surgeons"],
+          "link": "https://example.com/la/dr-rodriguez"
+        },
+        {
+          "id": "dr-patel",
+          "name": "Dr. Anita Patel",
+          "title": "Director of Research",
+          "specialty": "Hair Loss Treatment",
+          "experience": "14+ years",
+          "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+          "bio": "Dr. Patel combines her expertise in dermatology with cutting-edge research in hair restoration. She specializes in non-surgical treatments and has helped thousands of patients address hair loss through personalized treatment plans.",
+          "credentials": ["Board Certified", "American Academy of Dermatology", "International Society of Hair Restoration Surgery"],
+          "link": "https://example.com/la/dr-patel"
+        }
+      ],
       "reviews": [
         {
           "id": 1,
@@ -62,7 +116,9 @@
           "title": "Worth Every Penny",
           "content": "The LA location exceeded all my expectations. From the moment I walked in, I was treated like a VIP. The staff was knowledgeable and attentive, and the facility was absolutely beautiful. The procedure was explained in detail, and there were no surprises. The results are fantastic, and I've received so many compliments. Definitely worth the investment!",
           "avatar": "",
-          "verified": true
+          "verified": true,
+          "link": "https://example.com/reviews/la/1",
+          "doctor": "dr-rodriguez"
         },
         {
           "id": 2,
@@ -72,7 +128,9 @@
           "title": "Professional and Caring Staff",
           "content": "I was nervous about my procedure, but the team at the Los Angeles location put me at ease. They were patient with all my questions and concerns. The facility is modern and clean, and the procedure went smoothly. The only reason for 4 stars instead of 5 is that parking can be a bit challenging in the area.",
           "avatar": "",
-          "verified": true
+          "verified": true,
+          "link": "https://example.com/reviews/la/2",
+          "doctor": "dr-patel"
         },
         {
           "id": 3,
@@ -82,7 +140,9 @@
           "title": "Amazing Results",
           "content": "I couldn't be happier with my experience at the LA location. The consultation was thorough, and they created a personalized plan for me. The procedure was much more comfortable than I expected, and the results are even better than I hoped for. The follow-up care has been excellent as well. I highly recommend this location to anyone considering the procedure.",
           "avatar": "",
-          "verified": false
+          "verified": false,
+          "link": "https://example.com/reviews/la/3",
+          "doctor": "dr-rodriguez"
         },
         {
           "id": 4,
@@ -92,7 +152,9 @@
           "title": "Top-Notch Experience",
           "content": "From start to finish, my experience at the Los Angeles location was exceptional. The staff was friendly and professional, and the facility was impressive. The procedure itself was quick and relatively painless, and the results have been life-changing. I appreciate the attention to detail and the personalized care I received.",
           "avatar": "",
-          "verified": true
+          "verified": true,
+          "link": "https://example.com/reviews/la/4",
+          "doctor": "dr-patel"
         }
       ]
     },
@@ -106,6 +168,30 @@
       "total_reviews": 98,
       "image": "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1544&q=80",
       "description": "Our Chicago location features a team of award-winning specialists and a comfortable, welcoming environment for all our clients.",
+      "doctors": [
+        {
+          "id": "dr-williams",
+          "name": "Dr. Robert Williams",
+          "title": "Lead Surgeon",
+          "specialty": "Surgical Hair Restoration",
+          "experience": "20+ years",
+          "image": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+          "bio": "Dr. Williams is one of the most experienced hair restoration surgeons in the Midwest. His surgical precision and artistic approach have made him a sought-after specialist for patients seeking natural-looking results.",
+          "credentials": ["Board Certified", "American Board of Hair Restoration Surgery", "Fellow of the International Society of Hair Restoration Surgery"],
+          "link": "https://example.com/chicago/dr-williams"
+        },
+        {
+          "id": "dr-chen",
+          "name": "Dr. Michelle Chen",
+          "title": "Director of Patient Care",
+          "specialty": "Holistic Hair Restoration",
+          "experience": "10+ years",
+          "image": "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+          "bio": "Dr. Chen takes a holistic approach to hair restoration, considering factors such as nutrition, lifestyle, and overall health. Her comprehensive treatment plans address not just the symptoms but the underlying causes of hair loss.",
+          "credentials": ["Board Certified", "American Academy of Dermatology", "American Holistic Medical Association"],
+          "link": "https://example.com/chicago/dr-chen"
+        }
+      ],
       "reviews": [
         {
           "id": 1,
@@ -115,7 +201,9 @@
           "title": "Exceeded My Expectations",
           "content": "I had my procedure done at the Chicago location, and I couldn't be happier with the results. The staff was incredibly knowledgeable and made me feel comfortable from the consultation through the follow-up appointments. The facility is beautiful and immaculate. I've already recommended them to several friends and family members.",
           "avatar": "",
-          "verified": true
+          "verified": true,
+          "link": "https://example.com/reviews/chicago/1",
+          "doctor": "dr-williams"
         },
         {
           "id": 2,
@@ -125,7 +213,9 @@
           "title": "Great Experience, Minor Issues",
           "content": "Overall, I had a positive experience at the Chicago location. The staff was professional and the results are good. The only issues I had were with scheduling - there was some confusion about my appointment times, and I had to reschedule once due to a miscommunication. Despite that, I would still recommend this location.",
           "avatar": "",
-          "verified": true
+          "verified": true,
+          "link": "https://example.com/reviews/chicago/2",
+          "doctor": "dr-chen"
         },
         {
           "id": 3,
@@ -135,7 +225,9 @@
           "title": "Life-Changing Results",
           "content": "I cannot say enough good things about my experience at the Chicago location. From my initial consultation to my final follow-up, every interaction was positive and reassuring. The procedure itself was much easier than I anticipated, and the results have truly been life-changing. The staff genuinely cares about their patients, and it shows in everything they do.",
           "avatar": "",
-          "verified": true
+          "verified": true,
+          "link": "https://example.com/reviews/chicago/3",
+          "doctor": "dr-williams"
         }
       ]
     }
