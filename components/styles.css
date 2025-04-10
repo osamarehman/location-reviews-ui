@@ -1,11 +1,15 @@
 /**
  * Styles for Location Reviews UI Components
  * With global CSS variables for easy customization
+ *
+ * Note: To use MAXIM brand colors, import the maxim-theme.css file after this one:
+ * <link rel="stylesheet" href="components/styles.css">
+ * <link rel="stylesheet" href="components/maxim-theme.css">
  */
 
 /* Global CSS Variables */
 :root {
-    /* Brand Colors */
+    /* Brand Colors - Default theme (can be overridden by maxim-theme.css) */
     --lr-primary-color: #4f46e5;       /* Primary brand color (indigo) */
     --lr-primary-dark: #4338ca;        /* Darker shade of primary */
     --lr-primary-light: #818cf8;       /* Lighter shade of primary */
